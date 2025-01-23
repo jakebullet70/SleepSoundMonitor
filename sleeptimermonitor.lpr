@@ -10,11 +10,8 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, MainForm, lazcontrols, runtimetypeinfocontrols,
-  WinLightDarkTools,
-  uDarkStyleParams,
-  uDarkStyleSchemes,
-  uMetaDarkStyle;
+  Forms, MainForm, lazcontrols, runtimetypeinfocontrols,DateUtils,
+  WinLightDarkTools,uDarkStyleParams,uDarkStyleSchemes,uMetaDarkStyle;
 
 {$R *.res}
 

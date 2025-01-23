@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Buttons, Windows;
+  Buttons;
 
 type
 
@@ -36,9 +36,11 @@ type
 
   end;
 
+
+
 var
   frmMain: TfrmMain;
-  theTime: LongInt;
+  FTime: Int64;
 implementation
 
 {$R *.lfm}
@@ -57,9 +59,21 @@ begin
 end;
 
 procedure TfrmMain.Timer1Timer(Sender: TObject);
+
+var
+  Hours, Minutes, Seconds: Integer;
 begin
-  theTime:=theTime+100   ;
-  lblTime.Caption := IntToStr(theTime);
+  //Inc(FTime); // Increment the time counter
+  FTime := FTime + 1 ;//(Timer1.Interval / 1000)   ;
+
+  // Calculate hours, minutes, and seconds
+  Hours := FTime div 3600;
+  Minutes := (FTime div 60) mod 60;
+  Seconds := FTime mod 60;
+
+  // Update the label to show the elapsed time
+  lblTime.Caption := Format('%.2d:%.2d:%.2d', [Hours, Minutes, Seconds]);
+
 end;
 
 procedure TfrmMain.FormHide(Sender: TObject);
@@ -69,8 +83,9 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-     Timer1.Enabled:=false;
-     Timer1.Interval:=5000;
+   Timer1.Enabled  := false;
+   Timer1.Interval := 1000;
+   lblTime.Caption := '00:00:00';
 //  btnClose.Caption := '&Close';
  // Constraints.MaxHeight := 600; constraints.MinHeight := 400;
  // Constraints.MaxWidth  := 600; Constraints.MinWidth := 400;
@@ -93,6 +108,8 @@ procedure TfrmMain.btnEndClick(Sender: TObject);
 begin
    Timer1.Enabled:=false;
    btnEnd.Enabled:=false;
+   FTime := 0;
+   lblTime.Caption := '00:00:00';
 end;
 
 procedure TfrmMain.btnStartPauseClick(Sender: TObject);
