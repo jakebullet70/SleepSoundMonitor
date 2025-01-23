@@ -8,9 +8,11 @@
       <Unit>
         <Filename Value="sleeptimermonitor.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="50" Y="7"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="26"/>
         <UsageCount Value="20"/>
+        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="mainform.pas"/>
@@ -19,9 +21,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="MainForm"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="85"/>
-        <CursorPos X="25" Y="95"/>
+        <TopLine Value="45"/>
+        <CursorPos X="28" Y="96"/>
         <FoldState Value=" TL HC21 T3i607011F"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
