@@ -1,0 +1,78 @@
+object frmMain: TfrmMain
+  Left = 351
+  Height = 293
+  Top = 50
+  Width = 426
+  BorderStyle = bsSingle
+  Caption = 'Sleep Monitor - Timer'
+  ClientHeight = 293
+  ClientWidth = 426
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -16
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnCreate = FormCreate
+  OnHide = FormHide
+  OnWindowStateChange = FormWindowStateChange
+  Position = poScreenCenter
+  object btnEnd: TBitBtn
+    Left = 128
+    Height = 35
+    Top = 249
+    Width = 112
+    Caption = 'End'
+    Enabled = False
+    Kind = bkCancel
+    OnClick = btnEndClick
+    TabOrder = 0
+  end
+  object btnStartPause: TBitBtn
+    Left = 8
+    Height = 35
+    Top = 249
+    Width = 112
+    Caption = '&Start'
+    Kind = bkRetry
+    OnClick = btnStartPauseClick
+    TabOrder = 1
+  end
+  object btnCloseClick: TBitBtn
+    Left = 304
+    Height = 35
+    Top = 249
+    Width = 112
+    DefaultCaption = True
+    Kind = bkClose
+    ModalResult = 11
+    OnClick = btnCloseClickClick
+    TabOrder = 2
+  end
+  object Bevel1: TBevel
+    Left = 8
+    Height = 5
+    Top = 232
+    Width = 408
+    Style = bsRaised
+  end
+  object lbl1: TStaticText
+    Left = 272
+    Height = 23
+    Top = 32
+    Width = 127
+    Caption = 'Time'
+    TabOrder = 3
+  end
+  object lblTime: TStaticText
+    Left = 272
+    Height = 23
+    Top = 56
+    Width = 127
+    Caption = '0:00'
+    TabOrder = 4
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 8
+    Top = 232
+  end
+end
